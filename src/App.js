@@ -1,8 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
 
-function App() {
-  return <div className="App"></div>;
-}
+import React from "react";
+
+const App = () => {
+  return <div>dd</div>;
+};
 
 export default App;
