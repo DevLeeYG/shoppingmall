@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Router, Route, Link, Switch } from "react-router-dom";
 
 const Navi = styled.div`
   display: flex;
@@ -38,8 +39,13 @@ const Nav = () => {
     <Navi id="navbar">
       <h1 className="logo">Nike</h1>
       <div className="navbar__menu">
-        <div className="navbar__munu__item active">Home</div>
-        <div className="navbar__munu__item">About</div>
+        <Link to="/">
+          <div className="navbar__munu__item active">Home</div>
+        </Link>
+
+        <Link to="/about">
+          <div className="navbar__munu__item">About</div>
+        </Link>
       </div>
     </Navi>
   );

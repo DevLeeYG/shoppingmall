@@ -2,9 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Foot = styled.div`
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
   background-color: black;
   color: white;
-  position: absolute;
+ 
 
 left: 0;
 
