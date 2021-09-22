@@ -1,11 +1,16 @@
-import React from "react";
+import { useContext, useState } from "react";
 import { Route, Link, useParams } from "react-router-dom";
 
-const About = ({ data }) => {
+import { sparecontext } from "../App";
+
+const About = ({ data, spare, orderItem }) => {
   const { id } = useParams();
+  let sp = useContext(sparecontext);
+
   let finder = data.find(function (el) {
     return el.id == id;
   });
+
   return (
     <div className="container">
       <div className="row">
@@ -18,8 +23,16 @@ const About = ({ data }) => {
       <div className="col-md-6 mt-4">
         <h4 className="pt-5">{finder.title}</h4>
         <p>{finder.content}</p>
-        <p>{finder.price}</p>
-        <button className="btn btn-danger">주문하기</button>
+        <p>가격:{finder.price}</p>
+        재고:{sp[id]}
+        <button
+          onClick={() => {
+            orderItem(id);
+          }}
+          className="btn btn-danger"
+        >
+          주문하기
+        </button>
         <Link to="/">
           <button className="btn btn-danger">뒤로가기</button>
         </Link>

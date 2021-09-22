@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import styled from "styled-components";
-
+import { sparecontext } from "../App";
 const Shoes = ({ data, idx }) => {
-  console.log(data);
+  let spare = useContext(sparecontext);
+
   return (
     <div className="col-md-4">
       <img
