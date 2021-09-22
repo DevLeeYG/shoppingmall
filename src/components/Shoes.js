@@ -1,29 +1,18 @@
-import { useState } from "react";
 import styled from "styled-components";
-import dummyData from "../dummyData/shoesdata";
 
-const Div = styled.div`
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Shoes = ({ data }) => {
+const Shoes = ({ data, idx }) => {
+  console.log(data);
   return (
-    <Div>
-      {data.map((el, idx) => (
-        <div>
-          <img
-            width="200px"
-            alt=""
-            src={`https://codingapple1.github.io/shop/shoes${idx + 1}.jpg`}
-          />
-          {el.title}
-          {el.content}
-        </div>
-      ))}
-    </Div>
+    <div className="col-md-4">
+      <img
+        src={`https://codingapple1.github.io/shop/shoes${data.id + 1}.jpg`}
+        width="100px"
+      />
+      <h4>{data.title}</h4>
+      <p>
+        {data.content}&{data.price}
+      </p>
+    </div>
   );
 };
 
