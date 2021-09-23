@@ -9,6 +9,7 @@ import dummyData from "./dummyData/shoesdata";
 import styled from "styled-components";
 import axios from "axios";
 import React from "react";
+import Cart from "./pages/Cart";
 
 const Button = styled.div`
   display: flex;
@@ -23,7 +24,6 @@ const App = () => {
   const [count, setCount] = useState(2);
   const [loading, setLoading] = useState(false);
   const [spare, setSpare] = useState([10, 11, 12]);
-  const [tab, setTab] = useState(0);
 
   const response = () => {
     axios
@@ -91,6 +91,9 @@ const App = () => {
         </Route>
       </sparecontext.Provider>
 
+      <Route path="/cart">
+        <Cart />
+      </Route>
       {/* <Footer className="footer" /> */}
     </div>
   );
