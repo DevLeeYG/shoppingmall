@@ -2,7 +2,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import { Router, Route, Link, Switch } from "react-router-dom";
 import { useState, useParams, useContext } from "react";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Shoes from "./components/Shoes";
 import About from "./pages/About";
 import dummyData from "./dummyData/shoesdata";
@@ -23,6 +23,7 @@ const App = () => {
   const [count, setCount] = useState(2);
   const [loading, setLoading] = useState(false);
   const [spare, setSpare] = useState([10, 11, 12]);
+  const [tab, setTab] = useState(0);
 
   const response = () => {
     axios
@@ -89,7 +90,8 @@ const App = () => {
           <About orderItem={orderItem} spare={spare} data={data} />
         </Route>
       </sparecontext.Provider>
-      <Footer className="footer" />
+
+      {/* <Footer className="footer" /> */}
     </div>
   );
 };

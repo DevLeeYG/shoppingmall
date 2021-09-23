@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Route, Link, useParams } from "react-router-dom";
-
 import { sparecontext } from "../App";
+import Tab from "../components/Tab";
 
 const About = ({ data, spare, orderItem }) => {
   const { id } = useParams();
@@ -16,7 +16,7 @@ const About = ({ data, spare, orderItem }) => {
       <div className="row">
         <img
           src={`https://codingapple1.github.io/shop/shoes${finder.id + 1}.jpg`}
-          width="100%"
+          width="100px"
           alt=""
         />
       </div>
@@ -37,6 +37,7 @@ const About = ({ data, spare, orderItem }) => {
           <button className="btn btn-danger">뒤로가기</button>
         </Link>
       </div>
+      <Tab />
     </div>
   );
 };
